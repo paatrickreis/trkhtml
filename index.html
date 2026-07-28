@@ -3,108 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Consultoria em TI, soluções financeiras e tecnológicas para empresas.">
-  <meta name="keywords" content="TI, segurança, infraestrutura, consultoria, tecnologia, monitoramento">
-  <title>TRK Soluções</title>
+  <meta name="description" content="TRK Soluções em TI: infraestrutura, redes, cibersegurança, monitoramento e ITSM para empresas.">
+  <title>TRK Soluções em TI | Infraestrutura, Redes e Cibersegurança</title>
   <link rel="icon" href="logo-icon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    .hero {
-      background: linear-gradient(to right, #004e92, #000428);
-      color: white;
-      padding: 100px 20px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 3em;
-      margin-top: 20px;
-    }
-    .hero-logo {
-      max-width: 500px;
-      animation: fadeInUp 1s ease-in-out;
-      background-color: transparent;
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .section {
-      padding: 80px 20px;
-    }
-    .section h2 {
-      font-size: 2em;
-      text-align: center;
-      margin-bottom: 2em;
-    }
-    .footer {
-      background-color: #004e92;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="hero">
-    <img src="logo_moderno.png" alt="Logo TRK Soluções" class="hero-logo" style="background: none;">
-    <h1>Transformamos Tecnologia em valor</h1>
-    <p>Consultoria especializada em TI, Segurança e Infraestrutura</p>
-    <a class="ui huge inverted primary button" href="#contato">Fale Conosco</a>
-  </div>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header class="navbar"><div class="container navbar__inner"><a class="logo" href="index.html"><img src="logo-icon.png" alt="TRK Soluções"><span>TRK Soluções em TI</span></a><nav class="navbar__links" aria-label="Menu principal"><a href="index.html" aria-current="page">Início</a><a href="servicos.html">Serviços</a><a href="monitoramento.html">Monitoramento</a><a href="cases.html">Cases</a><a href="area-cliente.html">Área do Cliente</a><a href="#contato">Contato</a></nav></div></header>
 
-  <div class="ui container section" id="sobre">
-    <h2 data-aos="fade-up">Quem Somos</h2>
-    <p style="text-align:center;" data-aos="fade-up"><b>Na TRK Soluções, transformamos tecnologia em valor.</b><br><br>
-Fundada em 2021, nascemos com o propósito de oferecer soluções em Tecnologia da Informação que impulsionam os resultados dos nossos clientes. Atuamos de forma consultiva, com foco em segurança, performance e inovação, atendendo empresas de todos os portes e segmentos.<br>
-
-Nosso time é formado por especialistas com experiência prática em projetos de infraestrutura, cibersegurança, cloud computing, redes corporativas, monitoramento e conformidade com LGPD.<br>
-
-Acreditamos em parcerias de longo prazo e entregas com excelência. Mais do que prestadores de serviço, somos aliados na jornada digital dos nossos clientes.Desde 2021, a TRK Soluções entrega resultados concretos através da tecnologia. Nossa atuação vai da gestão de TI à consultoria contábil e financeira, atendendo empresas de todos os tamanhos.</p>
-  </div>
-
-  <div class="ui container section" id="servicos">
-    <h2 data-aos="fade-up">Serviços</h2>
-    <div class="ui three column stackable grid">
-      <div class="column" data-aos="zoom-in">
-        <i class="cogs huge blue icon"></i>
-        <h4>Gestão de Tecnologia</h4>
-        <p>Planejamento, segurança e alinhamento da TI com os objetivos do negócio.</p>
+  <main id="conteudo">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div data-aos="fade-up">
+          <span class="eyebrow"><i class="shield alternate icon"></i> Consultoria, operação e segurança</span>
+          <h1>Infraestrutura, Redes e Cibersegurança para empresas.</h1>
+          <p>Projetamos, implantamos e gerenciamos ambientes de infraestrutura, redes e segurança com foco em disponibilidade, desempenho e proteção.</p>
+          <div class="hero__actions"><a class="btn btn--primary" href="#contato">Falar com um Especialista</a><a class="btn btn--ghost" href="servicos.html">Conheça nossos Serviços</a></div>
+        </div>
+        <div class="hero-visual" data-aos="zoom-in" aria-label="Ilustração de infraestrutura corporativa conectada">
+          <div class="network-illustration"><div class="network-illustration__nodes"><div class="node node--main"><i class="server icon"></i> Datacenter & Cloud</div><div class="node"><i class="wifi icon"></i> Wi‑Fi</div><div class="node"><i class="shield alternate icon"></i> Firewall</div><div class="node"><i class="sitemap icon"></i> LAN/WAN</div><div class="node"><i class="chart line icon"></i> NOC</div><div class="node"><i class="tasks icon"></i> ITSM</div><div class="node"><i class="lock icon"></i> VPN</div></div></div>
+        </div>
       </div>
-      <div class="column" data-aos="zoom-in">
-        <i class="desktop huge blue icon"></i>
-        <h4>Monitoramento de Ativos</h4>
-        <p>Ambientes monitorados em tempo real, com alertas proativos e redução de falhas.</p>
-      </div>
-      <div class="column" data-aos="zoom-in">
-        <i class="chart line huge blue icon"></i>
-        <h4>Consultoria Estratégica</h4>
-        <p>Assessoria em TI, contabilidade e finanças com foco em crescimento sustentável.</p>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <div class="ui container section" id="parcerias">
-  <h2 data-aos="fade-up">Parcerias e Alianças</h2>
-  <p style="text-align:center;" data-aos="fade-up">Temos orgulho em contar com alianças estratégicas com líderes de tecnologia. Trabalhamos com marcas que são referência global para garantir excelência em nossas entregas.</p>
-  <div class="ui six column stackable center aligned grid" style="margin-top: 40px;" data-aos="zoom-in">
-    <div class="column">
-      <img src="logo_fortinet.png" alt="Fortinet" style="max-width: 100px;">
-    </div>
-  </div>
-</div>
+    <section class="section"><div class="container split"><div class="section__header" style="text-align:left;margin:0"><h2>Quem Somos</h2><p>A TRK Soluções em TI é especializada em infraestrutura, redes, monitoramento e cibersegurança, oferecendo serviços gerenciados que garantem maior disponibilidade, desempenho e segurança para ambientes corporativos.</p></div><div class="panel"><img src="logo_moderno.png" alt="Logo TRK Soluções em TI"></div></div></section>
 
-  <div class="footer" id="contato">
-    <p><i class="envelope outline icon"></i> contato@trksolucoes.com.br</p>
-    <p><a href="https://linkedin.com/company/trksolucoes" style="color: white;"><i class="linkedin icon"></i> LinkedIn</a></p>
-    <p>&copy; 2025 TRK Soluções. Todos os direitos reservados.</p>
-  </div>
+    <section class="section section--soft"><div class="container"><div class="section__header"><h2>Serviços</h2><p>Soluções objetivas para manter a operação segura, monitorada e preparada para crescer.</p></div><div class="grid grid--3">
+      <article class="card" data-aos="fade-up"><span class="icon"><i class="cogs icon"></i></span><h3>Serviços Gerenciados</h3><p>Operação contínua da infraestrutura de TI através de gestão proativa e suporte especializado.</p></article>
+      <article class="card" data-aos="fade-up"><span class="icon"><i class="chart line icon"></i></span><h3>Monitoramento</h3><p>Monitoramento de ativos, disponibilidade, desempenho e geração de alertas em tempo real.</p></article>
+      <article class="card" data-aos="fade-up"><span class="icon"><i class="server icon"></i></span><h3>Gestão de Infraestrutura</h3><p>Administração de servidores, ambientes cloud, conectividade e recursos críticos.</p></article>
+      <article class="card" data-aos="fade-up"><span class="icon"><i class="shield alternate icon"></i></span><h3>Gestão de Firewall</h3><p>Gerenciamento de ambientes Fortinet, VPNs, políticas de segurança, atualizações e suporte especializado.</p></article>
+      <article class="card" data-aos="fade-up"><span class="icon"><i class="sitemap icon"></i></span><h3>Gestão de Redes</h3><p>Administração de switches, Wi‑Fi corporativo, LAN, WAN e SD‑WAN.</p></article>
+      <article class="card" data-aos="fade-up"><span class="icon"><i class="tasks icon"></i></span><h3>ITSM</h3><p>Portal de serviços, chamados, base de conhecimento, SLAs e indicadores para atendimento estruturado.</p></article>
+    </div></div></section>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>AOS.init();</script>
+    <section class="section"><div class="container split"><div class="panel portal-card" data-aos="fade-right"><span class="eyebrow"><i class="headset icon"></i> Portal de Serviços</span><h2>ITSM para centralizar solicitações e indicadores.</h2><p>Centralize solicitações, acompanhe chamados e consulte a base de conhecimento através da nossa plataforma ITSM.</p><a class="btn btn--secondary" data-config-link="glpiPortalUrl" href="#">Acessar Portal</a></div><div class="grid"><article class="card"><h3>Processos padronizados</h3><p>Fluxos para incidentes, requisições, mudanças e problemas.</p></article><article class="card"><h3>Base de conhecimento</h3><p>Documentação para reduzir recorrência e acelerar atendimento.</p></article></div></div></section>
+
+    <section class="section section--soft"><div class="container"><div class="section__header"><h2>Parceiro Fortinet</h2><p>Segurança de rede com tecnologia reconhecida globalmente.</p></div><div class="panel partner-logo"><img src="logo_fortinet.png" alt="Fortinet"></div></div></section>
+
+    <section class="section"><div class="container"><div class="section__header"><h2>Cases</h2><p>Projetos executados sem exposição de clientes, focados em resultados técnicos e operacionais.</p></div><div class="grid grid--2">
+      <article class="card"><span class="icon"><i class="server icon"></i></span><h3>Modernização de infraestrutura corporativa</h3><p>Atualização de servidores, virtualização e documentação para reduzir riscos operacionais.</p></article>
+      <article class="card"><span class="icon"><i class="sync alternate icon"></i></span><h3>Implantação de ambiente de alta disponibilidade</h3><p>Arquitetura resiliente para serviços críticos e continuidade operacional.</p></article>
+      <article class="card"><span class="icon"><i class="shield alternate icon"></i></span><h3>Gestão de Firewall Fortinet</h3><p>Revisão de políticas, VPNs e rotinas de segurança para controle e proteção.</p></article>
+      <article class="card"><span class="icon"><i class="chart line icon"></i></span><h3>Monitoramento centralizado de ambientes críticos</h3><p>Dashboards, alertas e indicadores para atuação proativa.</p></article>
+    </div></div></section>
+
+    <section class="cta" id="contato"><div class="container"><h2>Vamos conversar sobre a infraestrutura da sua empresa?</h2><p>Fale com a TRK e identifique oportunidades para elevar disponibilidade, desempenho e segurança.</p><div class="cta__actions"><a class="btn btn--secondary" href="mailto:contato@trksolucoes.com.br">Entrar em contato</a></div></div></section>
+  </main>
+  <footer class="footer"><div class="container footer__grid"><div><h3>TRK Soluções em TI</h3><p>Consultoria e serviços gerenciados para infraestrutura, redes, segurança, monitoramento e ITSM.</p></div><div><h4>Contatos</h4><p>contato@trksolucoes.com.br</p><p>WhatsApp: configurar número</p></div><div><h4>Links</h4><p><a href="https://linkedin.com/company/trksolucoes">LinkedIn</a></p><p><a href="area-cliente.html">Área do Cliente</a></p></div><div><h4>Parceiro</h4><p>Fortinet</p></div></div><div class="container footer__bottom">© 2026 TRK Soluções. Todos os direitos reservados.</div></footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script><script src="app.js"></script>
 </body>
 </html>
