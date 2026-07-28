@@ -3,108 +3,456 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Consultoria em TI, soluções financeiras e tecnológicas para empresas.">
-  <meta name="keywords" content="TI, segurança, infraestrutura, consultoria, tecnologia, monitoramento">
-  <title>TRK Soluções</title>
+  <meta name="description" content="TRK Soluções: consultoria de TI para gestão de infraestrutura, gestão e projetos de redes, segurança, monitoramento e plataformas de ITSM.">
+  <meta name="keywords" content="consultoria de TI, gestão de infraestrutura, gestão de redes, projeto de redes, ITSM, segurança, monitoramento, TRK Soluções">
+  <title>TRK Soluções | Consultoria de TI e ITSM</title>
   <link rel="icon" href="logo-icon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <style>
+    :root {
+      --primary: #0f6fff;
+      --primary-dark: #004e92;
+      --navy: #061526;
+      --dark: #0b1220;
+      --muted: #65738a;
+      --surface: #ffffff;
+      --soft: #f4f8ff;
+      --line: rgba(15, 111, 255, 0.14);
+      --shadow: 0 24px 70px rgba(6, 21, 38, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      background: #fff;
+      line-height: 1.65;
     }
+
+    a { color: inherit; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(6, 21, 38, 0.08);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+    }
+
+    .brand img { width: 44px; height: 44px; object-fit: contain; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: #31415a;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
     .hero {
-      background: linear-gradient(to right, #004e92, #000428);
+      position: relative;
+      overflow: hidden;
       color: white;
-      padding: 100px 20px;
-      text-align: center;
+      padding: 106px 20px 92px;
+      background:
+        radial-gradient(circle at 78% 18%, rgba(15, 111, 255, 0.45), transparent 30%),
+        radial-gradient(circle at 20% 72%, rgba(0, 198, 255, 0.22), transparent 28%),
+        linear-gradient(135deg, #03101f 0%, #06325e 52%, #000428 100%);
     }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: linear-gradient(to bottom, #000, transparent 92%);
+    }
+
+    .hero-content {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      align-items: center;
+      gap: 54px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      color: #cfe5ff;
+      background: rgba(255, 255, 255, 0.08);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
     .hero h1 {
-      font-size: 3em;
-      margin-top: 20px;
+      margin: 22px 0 18px;
+      font-size: clamp(2.7rem, 6vw, 5.3rem);
+      line-height: 0.98;
+      letter-spacing: -0.07em;
     }
+
+    .hero p {
+      max-width: 680px;
+      color: #d9e8ff;
+      font-size: 1.25rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .ui.primary.button.cta {
+      background: linear-gradient(135deg, #2f8cff, #00c6ff);
+      box-shadow: 0 18px 38px rgba(15, 111, 255, 0.3);
+    }
+
+    .hero-card {
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
     .hero-logo {
-      max-width: 500px;
+      display: block;
+      max-width: 380px;
+      width: 100%;
+      margin: 0 auto 26px;
       animation: fadeInUp 1s ease-in-out;
-      background-color: transparent;
     }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .metric {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .metric strong { display: block; font-size: 1.55rem; }
+    .metric span { color: #cfe5ff; font-size: 0.92rem; }
+
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .section {
-      padding: 80px 20px;
-    }
-    .section h2 {
-      font-size: 2em;
+
+    .section { padding: 92px 20px; }
+    .section.alt { background: var(--soft); }
+
+    .section-title {
+      max-width: 820px;
+      margin: 0 auto 48px;
       text-align: center;
-      margin-bottom: 2em;
     }
-    .footer {
-      background-color: #004e92;
+
+    .section-title h2 {
+      margin: 0 0 14px;
+      color: var(--navy);
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      letter-spacing: -0.05em;
+    }
+
+    .section-title p { color: var(--muted); font-size: 1.1rem; }
+
+    .lead-card {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--surface);
+      box-shadow: 0 18px 48px rgba(6, 21, 38, 0.08);
+      color: #344158;
+      font-size: 1.05rem;
+    }
+
+    .service-card {
+      height: 100%;
+      padding: 30px;
+      border: 1px solid rgba(6, 21, 38, 0.08);
+      border-radius: 26px;
+      background: white;
+      box-shadow: 0 16px 38px rgba(6, 21, 38, 0.07);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 58px rgba(6, 21, 38, 0.12);
+    }
+
+    .service-icon {
+      display: inline-flex;
+      width: 60px;
+      height: 60px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      border-radius: 18px;
       color: white;
-      padding: 40px 20px;
+      background: linear-gradient(135deg, var(--primary), #00c6ff);
+    }
+
+    .service-card h3 { margin: 0 0 12px; color: var(--navy); letter-spacing: -0.025em; }
+    .service-card p { color: var(--muted); }
+
+    .service-card ul {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      color: #344158;
+    }
+
+    .service-card li { margin-top: 10px; }
+    .service-card li::before { content: "✓"; color: var(--primary); font-weight: 800; margin-right: 8px; }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .process-step {
+      padding: 26px;
+      border-radius: 24px;
+      background: #081b31;
+      color: #d9e8ff;
+      min-height: 190px;
+    }
+
+    .process-step strong { color: #fff; font-size: 2rem; }
+    .process-step h4 { margin: 14px 0 8px; color: #fff; }
+
+    .partner-card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 130px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: white;
+      box-shadow: 0 12px 34px rgba(6, 21, 38, 0.07);
+    }
+
+    .footer {
+      background: #061526;
+      color: white;
+      padding: 58px 20px;
       text-align: center;
+    }
+
+    .footer p { margin: 8px 0; color: #d9e8ff; }
+    .footer a { color: white; font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .hero-content, .process { grid-template-columns: 1fr; }
+      .nav { align-items: flex-start; flex-direction: column; padding: 14px 0; }
+      .nav-links { flex-wrap: wrap; gap: 14px; }
+      .hero { padding-top: 70px; }
+    }
+
+    @media (max-width: 520px) {
+      .metric-grid { grid-template-columns: 1fr; }
+      .hero-actions .button { width: 100%; }
     }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <img src="logo_moderno.png" alt="Logo TRK Soluções" class="hero-logo" style="background: none;">
-    <h1>Transformamos Tecnologia em valor</h1>
-    <p>Consultoria especializada em TI, Segurança e Infraestrutura</p>
-    <a class="ui huge inverted primary button" href="#contato">Fale Conosco</a>
-  </div>
-
-  <div class="ui container section" id="sobre">
-    <h2 data-aos="fade-up">Quem Somos</h2>
-    <p style="text-align:center;" data-aos="fade-up"><b>Na TRK Soluções, transformamos tecnologia em valor.</b><br><br>
-Fundada em 2021, nascemos com o propósito de oferecer soluções em Tecnologia da Informação que impulsionam os resultados dos nossos clientes. Atuamos de forma consultiva, com foco em segurança, performance e inovação, atendendo empresas de todos os portes e segmentos.<br>
-
-Nosso time é formado por especialistas com experiência prática em projetos de infraestrutura, cibersegurança, cloud computing, redes corporativas, monitoramento e conformidade com LGPD.<br>
-
-Acreditamos em parcerias de longo prazo e entregas com excelência. Mais do que prestadores de serviço, somos aliados na jornada digital dos nossos clientes.Desde 2021, a TRK Soluções entrega resultados concretos através da tecnologia. Nossa atuação vai da gestão de TI à consultoria contábil e financeira, atendendo empresas de todos os tamanhos.</p>
-  </div>
-
-  <div class="ui container section" id="servicos">
-    <h2 data-aos="fade-up">Serviços</h2>
-    <div class="ui three column stackable grid">
-      <div class="column" data-aos="zoom-in">
-        <i class="cogs huge blue icon"></i>
-        <h4>Gestão de Tecnologia</h4>
-        <p>Planejamento, segurança e alinhamento da TI com os objetivos do negócio.</p>
-      </div>
-      <div class="column" data-aos="zoom-in">
-        <i class="desktop huge blue icon"></i>
-        <h4>Monitoramento de Ativos</h4>
-        <p>Ambientes monitorados em tempo real, com alertas proativos e redução de falhas.</p>
-      </div>
-      <div class="column" data-aos="zoom-in">
-        <i class="chart line huge blue icon"></i>
-        <h4>Consultoria Estratégica</h4>
-        <p>Assessoria em TI, contabilidade e finanças com foco em crescimento sustentável.</p>
-      </div>
+  <header class="topbar">
+    <div class="ui container nav">
+      <a class="brand" href="#inicio" aria-label="TRK Soluções">
+        <img src="logo-icon.png" alt="Ícone TRK Soluções">
+        <span>TRK Soluções</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#sobre">Quem somos</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#metodo">Método</a>
+        <a href="#contato">Contato</a>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <div class="ui container section" id="parcerias">
-  <h2 data-aos="fade-up">Parcerias e Alianças</h2>
-  <p style="text-align:center;" data-aos="fade-up">Temos orgulho em contar com alianças estratégicas com líderes de tecnologia. Trabalhamos com marcas que são referência global para garantir excelência em nossas entregas.</p>
-  <div class="ui six column stackable center aligned grid" style="margin-top: 40px;" data-aos="zoom-in">
-    <div class="column">
-      <img src="logo_fortinet.png" alt="Fortinet" style="max-width: 100px;">
-    </div>
-  </div>
-</div>
+  <main id="inicio">
+    <section class="hero">
+      <div class="ui container hero-content">
+        <div data-aos="fade-up">
+          <span class="eyebrow"><i class="shield alternate icon"></i> Consultoria de TI para ambientes críticos</span>
+          <h1>Tecnologia estável, segura e pronta para crescer.</h1>
+          <p>Modernizamos a gestão de infraestrutura, redes corporativas, projetos de conectividade e plataformas de ITSM para que a TI entregue mais valor ao negócio.</p>
+          <div class="hero-actions">
+            <a class="ui huge primary button cta" href="#contato">Fale com um especialista</a>
+            <a class="ui huge inverted button" href="#servicos">Conheça os serviços</a>
+          </div>
+        </div>
+        <aside class="hero-card" data-aos="zoom-in" aria-label="Destaques da TRK Soluções">
+          <img src="logo_moderno.png" alt="Logo TRK Soluções" class="hero-logo">
+          <div class="metric-grid">
+            <div class="metric"><strong>24/7</strong><span>visão operacional e monitoramento</span></div>
+            <div class="metric"><strong>2021</strong><span>atuação consultiva em TI</span></div>
+            <div class="metric"><strong>ITSM</strong><span>processos e atendimento estruturados</span></div>
+            <div class="metric"><strong>Redes</strong><span>desenho, implantação e gestão</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-  <div class="footer" id="contato">
+    <section class="ui container section" id="sobre">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Quem somos</h2>
+        <p>Somos parceiros estratégicos para empresas que precisam transformar TI em disponibilidade, segurança e produtividade.</p>
+      </div>
+      <div class="lead-card" data-aos="fade-up">
+        <p><strong>Na TRK Soluções, transformamos tecnologia em valor.</strong> Fundada em 2021, a empresa nasceu para entregar soluções de Tecnologia da Informação com visão consultiva, execução prática e foco nos resultados dos clientes.</p>
+        <p>Atuamos em ambientes de todos os portes com gestão de infraestrutura, redes corporativas, segurança, cloud computing, monitoramento, governança e conformidade. Nosso objetivo é simplificar a operação, reduzir riscos e criar bases tecnológicas preparadas para o crescimento.</p>
+      </div>
+    </section>
+
+    <section class="section alt" id="servicos">
+      <div class="ui container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Serviços para uma TI completa</h2>
+          <p>Da arquitetura ao suporte contínuo, conectamos estratégia, operação e ferramentas para elevar a maturidade tecnológica da sua empresa.</p>
+        </div>
+        <div class="ui two column stackable grid">
+          <div class="column" data-aos="zoom-in">
+            <article class="service-card">
+              <span class="service-icon"><i class="server large icon"></i></span>
+              <h3>Gestão de Infraestrutura</h3>
+              <p>Administração, evolução e sustentação de servidores, ambientes híbridos, backups, virtualização e disponibilidade.</p>
+              <ul>
+                <li>Inventário, padronização e documentação do ambiente</li>
+                <li>Monitoramento proativo e prevenção de incidentes</li>
+                <li>Planos de capacidade, continuidade e melhoria contínua</li>
+              </ul>
+            </article>
+          </div>
+          <div class="column" data-aos="zoom-in">
+            <article class="service-card">
+              <span class="service-icon"><i class="sitemap large icon"></i></span>
+              <h3>Gestão de Redes</h3>
+              <p>Operação de LAN, WAN, Wi-Fi, firewalls, VPNs e conectividade com foco em desempenho, segurança e estabilidade.</p>
+              <ul>
+                <li>Acompanhamento de disponibilidade e performance</li>
+                <li>Gestão de mudanças, configurações e políticas</li>
+                <li>Diagnóstico e resposta rápida a falhas</li>
+              </ul>
+            </article>
+          </div>
+          <div class="column" data-aos="zoom-in">
+            <article class="service-card">
+              <span class="service-icon"><i class="project diagram large icon"></i></span>
+              <h3>Projetos de Redes</h3>
+              <p>Planejamento e implantação de redes escaláveis, segmentadas e seguras, alinhadas à operação e ao crescimento do negócio.</p>
+              <ul>
+                <li>Desenho lógico e físico da solução</li>
+                <li>Segmentação, endereçamento, Wi-Fi e segurança perimetral</li>
+                <li>Migração assistida e documentação de entrega</li>
+              </ul>
+            </article>
+          </div>
+          <div class="column" data-aos="zoom-in">
+            <article class="service-card">
+              <span class="service-icon"><i class="tasks large icon"></i></span>
+              <h3>Plataforma de ITSM</h3>
+              <p>Estruturação de atendimento, catálogo de serviços, SLAs, automações e indicadores para profissionalizar a gestão de chamados.</p>
+              <ul>
+                <li>Implantação e otimização de processos de suporte</li>
+                <li>Fluxos para incidentes, requisições, problemas e mudanças</li>
+                <li>Dashboards executivos e métricas operacionais</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="metodo">
+      <div class="ui container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Como entregamos valor</h2>
+          <p>Um modelo objetivo para entender o cenário, priorizar riscos e executar melhorias com governança.</p>
+        </div>
+        <div class="process">
+          <div class="process-step" data-aos="fade-up"><strong>01</strong><h4>Diagnóstico</h4><p>Mapeamos ativos, processos, riscos, dependências e pontos de melhoria.</p></div>
+          <div class="process-step" data-aos="fade-up"><strong>02</strong><h4>Plano de ação</h4><p>Definimos prioridades, roadmap, SLAs e indicadores alinhados ao negócio.</p></div>
+          <div class="process-step" data-aos="fade-up"><strong>03</strong><h4>Implantação</h4><p>Executamos projetos, automações, configurações e documentação técnica.</p></div>
+          <div class="process-step" data-aos="fade-up"><strong>04</strong><h4>Gestão contínua</h4><p>Acompanhamos disponibilidade, performance, segurança e evolução do ambiente.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="parcerias">
+      <div class="ui container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Parcerias e alianças</h2>
+          <p>Trabalhamos com marcas de referência global para garantir segurança, confiabilidade e excelência nas entregas.</p>
+        </div>
+        <div class="ui three column stackable centered grid" data-aos="zoom-in">
+          <div class="column">
+            <div class="partner-card">
+              <img src="logo_fortinet.png" alt="Fortinet" style="max-width: 132px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contato">
+    <h2>Vamos modernizar sua TI?</h2>
     <p><i class="envelope outline icon"></i> contato@trksolucoes.com.br</p>
-    <p><a href="https://linkedin.com/company/trksolucoes" style="color: white;"><i class="linkedin icon"></i> LinkedIn</a></p>
-    <p>&copy; 2025 TRK Soluções. Todos os direitos reservados.</p>
-  </div>
+    <p><a href="https://linkedin.com/company/trksolucoes"><i class="linkedin icon"></i> LinkedIn</a></p>
+    <p>&copy; 2026 TRK Soluções. Todos os direitos reservados.</p>
+  </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>AOS.init({ duration: 700, once: true });</script>
 </body>
 </html>
