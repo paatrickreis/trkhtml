@@ -1,6 +1,7 @@
-const GLPI_PORTAL_URL = '#';
-const KNOWLEDGE_BASE_URL = '#';
+const SERVICEHUB_URL = 'https://servicehub.trksolucoes.com.br/';
+const KNOWLEDGE_BASE_URL = SERVICEHUB_URL;
 const CONTACT_URL = 'mailto:contato@trksolucoes.com.br';
+const GLPI_PORTAL_URL = SERVICEHUB_URL;
 const WHATSAPP_URL = 'https://wa.me/5500000000000';
 
 const services = [
@@ -35,5 +36,5 @@ document.querySelectorAll('[data-home-cases]').forEach(el=>el.innerHTML=homeCase
 document.querySelectorAll('[data-detailed-cases]').forEach(el=>el.innerHTML=detailedCaseCards());
 document.querySelectorAll('[data-portal-url]').forEach(el=>el.href=GLPI_PORTAL_URL);
 document.querySelectorAll('[data-kb-url]').forEach(el=>el.href=KNOWLEDGE_BASE_URL);
-document.querySelectorAll('[data-contact-url]').forEach(el=>el.href=CONTACT_URL);
+document.querySelectorAll('[data-contact-url]').forEach(el=>el.href=SERVICEHUB_URL);
 document.querySelectorAll('[data-whatsapp-url]').forEach(el=>el.href=WHATSAPP_URL);
