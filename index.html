@@ -8,7 +8,7 @@
 <link rel="icon" href="logo-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,12 +19,13 @@
 <img src="logo-icon.png" alt="">
 <span>TRK Soluções em TI</span>
 </a>
-<nav class="nav-links" aria-label="Navegação principal">
+<button class="nav-toggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu-principal"><span></span><span></span><span></span></button>
+<nav class="nav-links" id="menu-principal" aria-label="Navegação principal">
 <a href="index.html">Início</a>
 <a href="servicos.html">Serviços</a>
 <a href="monitoramento.html">Monitoramento</a>
 <a href="cases.html">Cases</a>
-<a href="https://servicehub.trksolucoes.com.br/" target="_blank" rel="noopener">Área do Cliente</a>
+<a class="nav-portal" href="https://servicehub.trksolucoes.com.br/" target="_blank" rel="noopener">Área do Cliente <span aria-hidden="true">↗</span></a>
 <a href="#contato">Contato</a>
 </nav>
 </div>
@@ -33,28 +34,28 @@
 <section class="hero">
 <div class="container hero-grid">
 <div>
-<span class="eyebrow">🛡️ Infraestrutura crítica com segurança</span>
-<h1>Infraestrutura, Redes e Cibersegurança para empresas.</h1>
-<p>Projetamos, implantamos e gerenciamos ambientes de infraestrutura, redes e segurança com foco em disponibilidade, desempenho e proteção.</p>
+<span class="eyebrow"><span class="status-dot"></span>Infraestrutura crítica, protegida e monitorada</span>
+<h1>TI que sustenta.<br><em>Segurança que antecipa.</em></h1>
+<p>Projetamos, implantamos e gerenciamos infraestrutura, redes e cibersegurança para sua operação avançar com disponibilidade e confiança.</p>
 <div class="actions">
 <a class="btn btn-primary" href="mailto:contato@trksolucoes.com.br">Falar com um Especialista</a>
 <a class="btn btn-secondary" href="servicos.html">Conheça nossos Serviços</a>
 </div>
+<div class="trust-row" aria-label="Diferenciais da TRK">
+<span><strong>Foco</strong> em continuidade</span><span><strong>Visão</strong> consultiva</span><span><strong>Atuação</strong> proativa</span>
+</div>
 </div>
 <aside class="visual-card" aria-label="Ilustração de infraestrutura corporativa">
-<div class="network-visual">
-<svg aria-hidden="true">
-<line x1="50%" y1="50%" x2="50%" y2="12%" stroke="white" stroke-width="2"/>
-<line x1="50%" y1="50%" x2="17%" y2="52%" stroke="white" stroke-width="2"/>
-<line x1="50%" y1="50%" x2="83%" y2="52%" stroke="white" stroke-width="2"/>
-<line x1="50%" y1="50%" x2="50%" y2="88%" stroke="white" stroke-width="2"/>
-</svg>
-<div class="core">🔐</div>
-<div class="node n1">☁️</div>
-<div class="node n2">🖥️</div>
-<div class="node n3">📡</div>
-<div class="node n4">🧱</div>
+<div class="visual-label"><span class="status-dot"></span> Ambiente protegido</div>
+<div class="network-visual" aria-hidden="true">
+<div class="network-orbit orbit-one"></div><div class="network-orbit orbit-two"></div>
+<div class="core"><span>TRK</span><small>SECURE</small></div>
+<div class="node n1"><span>01</span><small>CLOUD</small></div>
+<div class="node n2"><span>02</span><small>NETWORK</small></div>
+<div class="node n3"><span>03</span><small>SECURITY</small></div>
+<div class="node n4"><span>04</span><small>SUPPORT</small></div>
 </div>
+<div class="visual-footer"><span>STATUS</span><strong>Todos os sistemas operacionais</strong><i></i></div>
 </aside>
 </div>
 </section>
@@ -66,6 +67,7 @@
 </div>
 <div class="lead">
 <p>A TRK Soluções em TI oferece serviços gerenciados que garantem maior disponibilidade, desempenho e segurança para ambientes corporativos. Atuamos com visão consultiva, operação proativa e foco em resultados mensuráveis para simplificar a TI e reduzir riscos.</p>
+<div class="lead-points"><span>Diagnóstico claro</span><span>Execução especializada</span><span>Evolução contínua</span></div>
 </div>
 </div>
 </section>
