@@ -38,3 +38,17 @@ document.querySelectorAll('[data-portal-url]').forEach(el=>el.href=GLPI_PORTAL_U
 document.querySelectorAll('[data-kb-url]').forEach(el=>el.href=KNOWLEDGE_BASE_URL);
 document.querySelectorAll('[data-contact-url]').forEach(el=>el.href=SERVICEHUB_URL);
 document.querySelectorAll('[data-whatsapp-url]').forEach(el=>el.href=WHATSAPP_URL);
+
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
+  });
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navLinks.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
+}
